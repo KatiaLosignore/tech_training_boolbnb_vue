@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js';
+import MessageForm from '../components/MessageForm.vue'
 
 export default {
     name: 'SingleApartment',
@@ -10,6 +11,9 @@ export default {
             store,
             apartment: null
         }
+    },
+    components: {
+        MessageForm
     },
     methods: {
         getApartment() {
@@ -83,6 +87,10 @@ export default {
 
                 </div>
 
+            </div>
+
+            <div class="py-5">
+                <MessageForm :apartment="apartment"></MessageForm>
             </div>
         </div>
 
